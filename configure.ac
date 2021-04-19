@@ -738,6 +738,7 @@ AC_CONFIG_FILES([Makefile libpam/Makefile libpamc/Makefile libpamc/test/Makefile
 	modules/pam_unix/Makefile modules/pam_userdb/Makefile \
 	modules/pam_usertype/Makefile \
 	modules/pam_warn/Makefile modules/pam_wheel/Makefile \
+	modules/pam_chksshpwd/Makefile \
 	modules/pam_xauth/Makefile doc/Makefile doc/specs/Makefile \
 	doc/man/Makefile doc/sag/Makefile doc/adg/Makefile \
 	doc/mwg/Makefile examples/Makefile tests/Makefile \

@@ -38,7 +38,7 @@ override_dh_auto_configure:
 override_dh_install:
 	sed -e"s/@DEB_HOST_MULTIARCH@/$(DEB_HOST_MULTIARCH)/g" $(d)/libpam0g-dev.install.in > $(d)/libpam0g-dev.install
 ifneq (,$(findstring libpam-modules, $(shell dh_listpackages)))
-	dh_install -plibpam-modules -Xpam_cracklib
+	dh_install -plibpam-modules -Xpam_cracklib -Xpam_chksshpwd
 endif
 	dh_install -Nlibpam-modules
 	# Make sure the md5sums for the templates we ship are
@@ -61,6 +61,7 @@ override_dh_installman:
 	pod2man --section 8 --release="Debian GNU/Linux" $(dl)/pam_getenv >$(dl)/pam_getenv.8
 	dh_installman
 	rm -f $(d)/libpam-modules/usr/share/man/man5/pam.conf.5
+	rm -f $(d)/libpam-modules/usr/share/man/man8/pam_chksshpwd.8
 	rm -f $(d)/libpam-modules/usr/share/man/man8/pam_cracklib.8
 	rm -f $(d)/libpam-modules/usr/share/man/man8/pam_timestamp_check.8
 
