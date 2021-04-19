@@ -98,7 +98,7 @@ SUBDIRS := \
 	pam_warn \
 	pam_wheel \
 	pam_xauth \
-	pam_chksshpwd
+	pam_chksshpwd \
 	#
 
 CLEANFILES = *~
